@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title> A Chatbot Client to reverse a string</title>	
+	<link rel="stylesheet" href="/./stylesheets/mycss.css">
+
+	<!-- For clients (or browsers) to be able to connect to the server, they must use the client side javascript library 
+that ships with Socket IO and then connect to the server. Server is serving single index.html file and this needs
+to be connected to the server. This can be achieved by adding following lines. This includes a single javascript file that
+allows the client (or browser) to communicate with the server. This can be any server but in this case it is connected to Node JS
+server running on 127.0.0.1 on port 3000 -->
+ 
+<!-- <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script> -->
+<!-- <script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+<script src="/./socket.io/socket.io.js"></script>
+<script>
+<!-- var host = window.location.hostname; -->
+<!-- var connectString =  'http://' + host +':3000'; -->
+<!-- var socket = io.connect(window.location.origin); -->
+<!-- var socket = io.connect('http://127.0.0.1:3000'); -->
+</script>
+
+</head>
+<body>
+<header>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+	<h2><label id="supportmsg"></label></h2>
+	<div class="chatheader"> <h1>Websocket Chat to Reverse a String </h1> </div> <br>
+</header>
+<div id = "textareadiv" align="center">
+  <textarea id="messagelog" rows="20" cols="100" readonly ></textarea> <br>
+  <textarea id="message" rows="4" cols="100" placeholder ="Write your message here ..." required  
+			onblur="addPlaceholderTextOnBlur()" onfocus="clearPlaceholderTextOnFocus()" onkeydown="submitEnterKey()"></textarea> <br>	
+</div>
+<div id ="sendbtndiv" style="margin-left: 1000px;">
+  <input id="sendbtn" type="image" src="/./images/img_submit.gif" title="Send" onClick="sendMsgUsingWebSockets()"> </input>
+  <input type="image" src="/./images/reset.png" onClick="resetText()" title="Reset Text"> </input>
+  <input id="closeConnectionbtn" type="image" src="/./images/disconnect.png" title="Disconnect from Server"> </input>
+  <input id="reconnectbtn" type="image" src="/./images/reconnect.png" title="Reconnect" onclick="javascript:window.location.reload();"> </input>
+  <input type="image" src="/./images/exit.png" onClick="closeWindow()" title="Close Chat Window"> </input> </div>
+<footer>
+		<details>
+	<h3><a href="about.html" target="_blank"> Details of this application </a></h3>
+ 	<h4>
+	Created by Ketaki Deshpande. 
+	For any issues or feedback - <a href="mailto:kdeshpande@fusionalliance.com?subject=Feedback for Chatbot&body=Hi There,">Send me an email</a>
+	</h4>
+	    </details>
+	</footer>
+</body>
+<script src="/./javascripts/appclient.js"> </script>
+</html>

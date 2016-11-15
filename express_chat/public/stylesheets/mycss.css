@@ -1,0 +1,14 @@
+body{
+}
+h1{
+text-align:center;
+}
+.chatheader{
+display:block;
+background-color:#dddddd;
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
+}
